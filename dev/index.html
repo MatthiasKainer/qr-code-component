@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;qr-code> Demo</title>
+    <script type="module" src="../dist/qr-code.min.js"></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document
+          .getElementById('qrCodeText')
+          .addEventListener('keyup', (event) => {
+            window.postMessage({ type: "qr-code.changeText", text: event.target.value }, window.location.origin)
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <qr-code text="text" style="width: 400px; height: 400px; margin: 0 auto;"></qr-code>
+    <input id="qrCodeText" type="text" placeholder="insert text for qr code" />
+  </body>
+</html>
