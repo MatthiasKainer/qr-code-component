@@ -28,4 +28,18 @@ suite('qr-code', () => {
       `
     );
   });
+  
+  test('renders an qr code element if text is send from event', async () => {
+    const el = await fixture(html`<qr-code text="https://matthias-kainer.de"></qr-code>`);
+    window.postMessage({ type: "qr-code.changeText", text: "Another Text" }, window.location.origin)
+    await new Promise(resolve => {
+      setTimeout(resolve, 5)
+    })
+    assert.shadowDom.equal(
+      el,
+      `
+      <div class="qrCanvas" title="Another Text" style="background-image:url('Another Text')"></div>
+      `
+    );
+  });
 });
