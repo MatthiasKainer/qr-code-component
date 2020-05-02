@@ -10,6 +10,8 @@ export class QRCodeElement extends LitElement {
   static styles = css`
   :host {
     display: block;
+    width: 100%;
+    height: 100%;
   }
   .qrCanvas {
     background-size:cover;
