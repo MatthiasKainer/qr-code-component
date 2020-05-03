@@ -5,8 +5,17 @@ A simple qr code generating web component.
 ## Usage
 
 ```html
+<!-- lit-element from unpkg.com -->
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/MatthiasKainer/qr-code-component/dist/qr-code.min.js"
+></script>
+<!-- bundled with lit-element -->
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/MatthiasKainer/qr-code-component/dist/qr-code.dist.js"
+></script>
 
-<script type="module" src="../dist/qr-code.min.js"></script>
 <qr-code text="The text you want in the qr code"></qr-code>
 
 ```

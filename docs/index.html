@@ -8,75 +8,20 @@
       href="https://fonts.googleapis.com/css2?family=Jost:wght@100&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Source+Code+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="module"
       src="https://cdn.jsdelivr.net/gh/MatthiasKainer/qr-code-component/dist/qr-code.min.js"
     ></script>
-    <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        background-color: #539898;
-      }
-      * {
-        font-family: 'Jost', sans-serif;
-      }
-      h1 {
-        text-align: center;
-        font-size: 8rem;
-        color: white;
-      }
-      div {
-        width: 400px;
-        height: 400px;
-        margin: 0 auto;
-      }
-      input {
-        font-size: 5rem;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px dashed white;
-        color: white;
-        width: 100%;
-      }
-      input:focus {
-        outline: none;
-        border-bottom: 1px solid white;
-      }
-      input::placeholder {
-        color: lightgray;
-      }
-      pre {
-        font-family: 'Source Code Pro', monospace;
-        margin:5px 30px;
-        padding: 5px;
-        font-size: 3rem;
-        color: white;
-        opacity: 0.8;
-        border-left: 1px solid white;
-      }
-    </style>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document
-          .getElementById('qrCodeText')
-          .addEventListener('keyup', (event) => {
-            window.postMessage(
-              {type: 'qr-code.changeText', text: event.target.value},
-              window.location.origin
-            );
-            document.querySelector('pre').innerText = `<qr-code
-  text="${event.target.value}"
-></qr-code>`;
-          });
-      });
-    </script>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <h1>&lt;qr-code> Demo</h1>
-    <div>
+    <h1>&lt;qr-code /> Demo</h1>
+    <div class="qr-code">
       <qr-code
         text="https://matthias-kainer.de"
         style="height: 100%;"
@@ -84,10 +29,26 @@
     </div>
 
     <input id="qrCodeText" type="text" placeholder="insert text for qr code" />
-
-    <pre>
+    <div class="code">
+      <button id="copy">Copy to clipboard</button>
+      <textarea readonly>
 &lt;qr-code
   text="https://matthias-kainer.de"
->&lt;/qr-code></pre>
+>&lt;/qr-code></textarea
+      >
+    </div>
+    <hr />
+    <pre class="info">
+// lit-element from unpkg.com
+&lt;script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/MatthiasKainer/qr-code-component/dist/qr-code.min.js"
+>&lt;/script>
+// bundled with lit-element
+&lt;script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/MatthiasKainer/qr-code-component/dist/qr-code.dist.js"
+>&lt;/script>
+</pre>
   </body>
 </html>
