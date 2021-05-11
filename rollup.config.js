@@ -2,7 +2,6 @@ import filesize from 'rollup-plugin-filesize';
 import {terser} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import alias from '@rollup/plugin-alias';
 import typescript from 'rollup-plugin-typescript2';
 
 const input = 'src/qr-code.ts'
@@ -36,14 +35,9 @@ const minBundle = {
     format: 'esm'
   },
   onwarn,
-  external: ['https://unpkg.com/lit-element?module'],
+  external: ['lit-element'],
   plugins : [
-    ...plugins,
-    alias({
-      entries: {
-        "lit-element": 'https://unpkg.com/lit-element?module'
-      }
-    }),
+    ...plugins
   ],
 };
 const fullBundle = {
