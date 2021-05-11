@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>&lt;qr-code> Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@100&display=swap"
       rel="stylesheet"
@@ -25,14 +26,13 @@
     <div class="qr-code">
       <qr-code
         text="https://matthias-kainer.de"
-        style="height: 100%;"
       ></qr-code>
     </div>
 
     <input id="qrCodeText" type="text" placeholder="insert text for qr code" />
     <div class="code">
       <button id="copy">Copy to clipboard</button>
-      <textarea readonly>
+      <textarea readonly aria-label="Text to be copied to clipboard">
 &lt;qr-code
   text="https://matthias-kainer.de"
 >&lt;/qr-code></textarea
