@@ -6,19 +6,17 @@
   "module": "dist/qr-code.min.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && rollup -c && rollup -c rollup.config.min.js",
-    "build:watch": "tsc --watch & rollup -c --watch",
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
     "format": "prettier src/* --write",
     "analyze": "wca analyze \"src/**/*.ts\" --outFile custom-elements.json",
-    "serve": "npm run build:watch & es-dev-server --node-resolve --watch",
+    "serve": "npm run build && es-dev-server --node-resolve --watch",
     "docs": "es-dev-server --node-resolve --watch",
     "test": "npm run build && karma start karma.conf.cjs",
-    "test:watch": "tsc --watch & karma start karma.conf.cjs --auto-watch=true --single-run=false",
-    "checksize": "rollup -c ; cat qr-code.min.js | gzip -9 | wc -c ;",
-    "checksize:min": "rollup -c rollup.config.min.js; cat qr-code.min.js | gzip -9 | wc -c ;"
+    "test:watch": "karma start karma.conf.cjs --auto-watch=true --single-run=false"
   },
   "keywords": [
     "web-components",
@@ -48,6 +46,8 @@
     "eslint": "^6.8.0",
     "karma": "^5.0.4",
     "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-firefox-launcher": "^2.1.0",
     "karma-mocha": "^2.0.1",
     "lit-analyzer": "^1.1.10",
     "mocha": "^7.1.1",
@@ -55,7 +55,9 @@
     "rollup": "^1.32.1",
     "rollup-plugin-filesize": "^7.0.0",
     "rollup-plugin-terser": "^5.3.0",
-    "typescript": "^3.8.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tslib": "^2.2.0",
+    "typescript": "^3.9.9",
     "web-component-analyzer": "^1.0.3"
   }
 }
