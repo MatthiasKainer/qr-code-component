@@ -4,22 +4,10 @@
     {
       "name": "qr-code",
       "path": "./src/qr-code.ts",
-      "description": "A simple qr-code component",
-      "attributes": [
-        {
-          "name": "text",
-          "description": "The text to put in the qr code",
-          "type": "string",
-          "default": "\"\""
-        }
-      ],
       "properties": [
         {
           "name": "text",
-          "attribute": "text",
-          "description": "The text to put in the qr code",
-          "type": "string",
-          "default": "\"\""
+          "type": "string"
         }
       ]
     }

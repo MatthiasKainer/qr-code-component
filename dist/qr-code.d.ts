@@ -1,21 +1,13 @@
-import { LitElement } from 'lit-element';
+import { LitElementWithProps } from "pure-lit/lib/full";
 import "qrjs2";
-/**
- * A simple qr-code component
- *
- */
-export declare class QRCodeElement extends LitElement {
-    static styles: import("lit-element").CSSResult;
-    constructor();
-    /**
-     * The text to put in the qr code
-     */
+interface QRCode {
     text: string;
-    render(): import("lit-element").TemplateResult;
 }
+declare const _default: LitElementWithProps<QRCode>;
+export default _default;
 declare global {
     interface HTMLElementTagNameMap {
-        'qr-code': QRCodeElement;
+        'qr-code': QRCode;
     }
 }
 //# sourceMappingURL=qr-code.d.ts.map

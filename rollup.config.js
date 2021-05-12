@@ -2,6 +2,7 @@ import filesize from 'rollup-plugin-filesize';
 import {terser} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 
 const input = 'src/qr-code.ts'
@@ -9,6 +10,7 @@ const plugins = [
   typescript(),
   replace({'Reflect.decorate': 'undefined'}),
   resolve(),
+  commonjs(),
   terser({
     module: true,
     warnings: true,
