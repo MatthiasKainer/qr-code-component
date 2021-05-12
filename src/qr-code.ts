@@ -1,5 +1,5 @@
-import { html, css } from 'lit-element';
-import { LitElementWithProps, pureLit, useOnce, useState } from "pure-lit/lib/full"
+import { html, css } from 'lit';
+import { LitElementWithProps, pureLit, useOnce, useState } from "pure-lit"
 import "qrjs2";
 
 interface QRCode {

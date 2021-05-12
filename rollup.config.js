@@ -9,8 +9,8 @@ const input = 'src/qr-code.ts'
 const plugins = [
   typescript(),
   replace({'Reflect.decorate': 'undefined'}),
-  resolve(),
   commonjs(),
+  resolve(),
   terser({
     module: true,
     warnings: true,
@@ -37,10 +37,8 @@ const minBundle = {
     format: 'esm'
   },
   onwarn,
-  external: ['lit-element'],
-  plugins : [
-    ...plugins
-  ],
+  external: ['lit'],
+  plugins,
 };
 const fullBundle = {
   input,

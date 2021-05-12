@@ -1,4 +1,4 @@
-import { LitElementWithProps } from "pure-lit/lib/full";
+import { LitElementWithProps } from "pure-lit";
 import "qrjs2";
 interface QRCode {
     text: string;
