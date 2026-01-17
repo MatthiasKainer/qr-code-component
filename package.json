@@ -28,7 +28,7 @@
   "dependencies": {
     "lit": "^2.0.0-rc.2",
     "pure-lit": "^1.0.3",
-    "qrjs2": "^0.1.9"
+    "qrjs2": "^0.1.12"
   },
   "devDependencies": {
     "@open-wc/karma-esm": "^2.16.18",
